@@ -69,7 +69,7 @@ def move(from_folder, to_folder, condition):
     server.select_folder(from_folder)
     message_ids = server.search()
     message_count = len(message_ids)
-    print('there are {0} messages in the in {1}'.format(message_count, from_folder))
+    print('there are {0} messages in the {1}'.format(message_count, from_folder))
 
     total_moved = 0
     for batch_start in range(0,message_count,BATCH_SIZE):
