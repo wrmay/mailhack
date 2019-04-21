@@ -16,7 +16,7 @@ def address_to_string(addr):
     if addr.mailbox is None or addr.host is None:
         return None
         
-    return str(addr.mailbox, encoding='utf-8').lower() + '@' + str(addr.host, encoding='utf-8').lower()
+    return '{0}@{1}'.format(addr.mailbox.lower(),addr.host.lower())
 
 def always(envelope):
     return True
@@ -25,6 +25,9 @@ def not_permitted(envelope):
     return not permitted(envelope)
 
 def permitted(envelope):
+    if envelope.from_ is None:
+        return False
+        
     for address in list(envelope.from_):
         sender = address_to_string(address)
         if sender is None:
