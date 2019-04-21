@@ -86,3 +86,8 @@ white list are moved to the `Mailhack/Trash` folder.  All emails in
 
 Connects to your IMAP server and processes the `Mailhack/Trash` folder.  Emails 
 sent more than 90 days ago are deleted.
+
+# Known Issues
+
+* __Do not run under python3__.  Under python3, `mailhack.py` will move all emails to the `Mailhack/Trash' folder.
+
